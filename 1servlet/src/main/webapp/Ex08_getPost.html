@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>GET 방식</h1>
+<form action="Ex08_getPost">
+	DATA: <input type="text" name="data">
+	<input type="submit" value="GET">
+</form>
+<ol>
+<li> URL에 쿼리스트링 방식으로 데이터 전송</li>
+<li> 데이터 길의 제한(1024byte)</li>
+<li> URL에 데이터가 노출이 되기 때문에 보안의 취약</li>
+<li> 리소스 조회(READ)</li>
+<li> 캐시(임시저장소)에 저장하기 때문에
+데이터를 다시 로딩하지 않아도 속도가 빠름</li>
+<li> form태그에 method 속성을 통해서 지정하는데,
+따로 작성하지 않아도 get방식으로 데이터 전송(기본값으로 지정)</li>
+</ol>
+<hr>
+<h1>POST 방식</h1>
+<form action="Ex08_getPost" method="post">
+	DATA: <input type="text" name="data">
+	<input type="submit" value="POST">
+</form>
+<ol>
+<li> 패킷(데이터블록)의 body 부분에 데이터를 담아서 전송</li>
+<li> 데이터 길이의 제한이 없음</li>
+<li> 직접 노출이 되지 않아서 GET방식보다 보안에 강함</li>
+<li> 데이터 처리 및 등록</li>
+<li> method 속성에 POST로 지정 </li>
+<li> 데이터의 타입을 명시(Content-Type)</li>
+	<ul>
+  		<li> Application/x-www-form-urlencoded(기본값)<br>
+  				-> 데이터를 key=value의 형태로 전송<br>
+  				-> 전송하는 데이터를 url encoding해서 처리 </li>
+  		<li> multipart/form-data<br>
+  				-> 파일업로드와 같은 바이너리 데이터 전송 시 사용<br>
+  				-> multipart이름처럼 다른 종류의 여러 파일을 전송 가능 </li>
+  		<li> application/json<br>
+  				-> text,xml,json 데이터 전송 시 사용 </li>
+  		<li> text/plain<br>
+  				-> txt 형태로 전송 </li>
+	</ul>
+
+</ol>
+</body>
+</html>
